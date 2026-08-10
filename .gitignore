@@ -1,0 +1,23 @@
+# Secrets / internal links (never pushed)
+.env
+.env.*
+
+# WSQ assessment materials (confidential — never pushed)
+/assessment/
+/assessment\ /
+
+# Source material the project was derived from — not ours to republish.
+**/reference/
+# Reference implementations inside skills are toolchain code — keep them.
+!.claude/skills/**/reference/
+!.claude/skills/**/reference/**
+
+# Distribution archives (rebuildable — never pushed to GitHub)
+*.zip
+
+# Local-only
+.DS_Store
+labs
+__pycache__/
+*.pyc
+.playwright-mcp/
