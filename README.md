@@ -34,14 +34,14 @@ and capital-budgeting techniques to real numbers in Excel.
 
 ```
 ├── courseware/
-│   ├── Financial Analysis for Small and Medium Enterprises-v11.pptx   # trainer slide deck (122 slides)
-│   ├── Financial Analysis for Small and Medium Enterprises-v11.pdf    # learner slide PDF
+│   ├── Financial Analysis for Small and Medium Enterprises-v12.pptx   # trainer slide deck (122 slides)
+│   ├── Financial Analysis for Small and Medium Enterprises-v12.pdf    # learner slide PDF
 │   ├── LP-Financial Analysis for Small and Medium Enterprises.docx    # Lesson Plan (+ PDF)
 │   ├── LG-Financial Analysis for Small and Medium Enterprises.docx    # Learner Guide (+ PDF)
 │   └── assets/                                                        # slide images & diagrams
-├── activities/                    # 6 hands-on activities (guides + worksheets)
-│   ├── activity-01 … activity-06  # step-by-step activity guides
-│   └── TOPIC 1–3 folders          # activity question/answer worksheets
+├── activities/                    # 6 hands-on activities — one folder each
+│   ├── activity01 … activity06    # guide (.md) + mock-data workbook (.xlsx) + raw data (.csv)
+│   └── TOPIC 1–3 folders          # legacy activity question/answer worksheets (PDF)
 ├── LG-Financial Analysis for Small and Medium Enterprises.md          # Learner Guide (Markdown mirror)
 └── .claude/                       # single-source courseware build pipeline
 ```
@@ -54,6 +54,10 @@ and capital-budgeting techniques to real numbers in Excel.
 4. **Payback Period & Discounted Payback Period** — evaluate a $2,000 project at a 10% discount rate.
 5. **Net Present Value & Profitability Index** — NPV and PI accept/reject decision.
 6. **Solvency & Financial Risk Analysis** — debt-to-equity, financial leverage and interest coverage comparison.
+
+Every activity ships with realistic mock data for fictitious Singapore SMEs (Havenwood Trading,
+Orchid Logistics, Marina Retail Group, Sunrise F&B Holdings) as a formatted Excel workbook plus raw
+CSV files — regenerate them with `.claude/skills/courseware-build/build/build_lab_data.py`.
 
 ## Regenerating the Courseware
 

@@ -5,7 +5,7 @@ mirror (LG-*.md at repo root) and a DOCX (courseware/LG-*.docx) from one source.
 House format: cover page, Document Version Control Record, auto TOC, Arial 11pt
 body, one section per activity (Objective · Goal · What you'll produce · Data ·
 Step-by-step with workings · Test it), plus concepts per topic and a glossary.
-Also writes one activity-NN-*.md file per activity into activities/.
+Also writes one activity-NN-*.md guide into activities/activityNN/ alongside its data files.
 """
 import os, sys, re
 from docx import Document
@@ -43,8 +43,9 @@ def rule(): B.append(("rule",))
 h1("Introduction")
 p(f"This Learner Guide accompanies the WSQ course {C.TITLE} ({C.COURSE_CODE}), conducted by {C.ORG}. "
   "It provides the key concepts for each of the three topics and detailed step-by-step instructions "
-  "for all six hands-on activities. Each activity uses a worksheet downloadable from the course LMS "
-  "(https://lms-tms.tertiaryinfotech.com) and is completed in Microsoft Excel or Google Sheets.")
+  "for all six hands-on activities. Each activity analyses a realistic mock-data workbook (Excel + CSV, "
+  "fictitious Singapore SMEs) from its own folder under activities/ — also downloadable from the course LMS "
+  "(https://lms-tms.tertiaryinfotech.com) — and is completed in Microsoft Excel or Google Sheets.")
 p("Use this guide alongside the course slides. The final assessment is open book: you may refer to the "
   "slides, this Learner Guide and any approved materials, so keep your completed activity worksheets — "
   "they are your best revision notes.")
@@ -61,7 +62,8 @@ h3("What you need")
 bullets([
  "A laptop with Microsoft Excel (2016 or later) or a Google account for Google Sheets.",
  "Access to the course LMS at https://lms-tms.tertiaryinfotech.com — log in with your registered email (an OTP is sent to you).",
- "The activity worksheets, downloaded from your course page on the LMS.",
+ "The mock-data workbooks: each activity has its own folder (activities/activity01 … activity06, also in the Activities folder on the LMS) holding the activity guide (.md), a formatted Excel workbook (.xlsx) and the raw data as .csv files.",
+ "All company data is fictitious and prepared for training use only.",
  "A calculator (or the spreadsheet itself) for the ratio and discounting computations.",
 ])
 h3("Conventions used in every activity")
@@ -90,8 +92,9 @@ for t in C.TOPICS:
         steps(list(a["steps"]))
         h3("Test it")
         p(a["test"])
-        note(f"The full worksheet for this activity is available on the LMS, and a printable copy is in "
-             f"activities/activity-{a['num']:02d} of the course repository.")
+        note(f"Everything for this activity lives in activities/activity{a['num']:02d}/ of the course "
+             f"repository (and in the Activities folder on the LMS): this guide, the Excel data workbook "
+             f"and the raw data as CSV files.")
         rule()
 
 h1("Revision Pointers for the Final Assessment")
@@ -173,8 +176,11 @@ def slug(t):
     s=re.sub(r"[^a-z0-9]+","-",t.lower()).strip("-")
     return s
 index_lines=[f"# Activities — {C.TITLE} ({C.COURSE_CODE})","",
-             "One file per hands-on activity. The same steps, with full workings, are in the Learner Guide.",""]
+             "One folder per hands-on activity: the step-by-step guide (.md), the mock-data Excel workbook "
+             "(.xlsx) and the raw data as .csv files. The same steps, with full workings, are in the Learner Guide.",""]
 for a in ACT:
+    sub=os.path.join(ACT_DIR,f"activity{a['num']:02d}")
+    os.makedirs(sub,exist_ok=True)
     fn=f"activity-{a['num']:02d}-{slug(a['title'])}.md"
     lines=[f"# Activity {a['num']} — {a['title']}","",
            f"**Topic {a['topic']}** · {a['objective']}","",
@@ -188,9 +194,13 @@ for a in ACT:
     for i,(instr,work) in enumerate(a["steps"],1):
         lines.append(f"{i}. {instr}")
         if work: lines+=["","   ```",f"   {work}","   ```",""]
+    data_files=sorted(x for x in os.listdir(sub) if x.endswith((".xlsx",".csv")))
+    if data_files:
+        lines+=["","## Data files in this folder",""]
+        lines+=[f"- `{x}`" for x in data_files]
     lines+=["","## Test it","",a["test"],""]
-    with open(os.path.join(ACT_DIR,fn),"w") as f: f.write("\n".join(lines))
-    index_lines.append(f"- [Activity {a['num']} — {a['title']}]({fn})")
+    with open(os.path.join(sub,fn),"w") as f: f.write("\n".join(lines))
+    index_lines.append(f"- [Activity {a['num']} — {a['title']}](activity{a['num']:02d}/{fn})")
 with open(os.path.join(ACT_DIR,"README.md"),"w") as f: f.write("\n".join(index_lines)+"\n")
 print("Saved",len(ACT),"activity files +",os.path.join(ACT_DIR,"README.md"))
 
@@ -205,8 +215,10 @@ prodoc.add_cover_page(doc,"LEARNER GUIDE",C.TITLE,C.VERSION.lstrip("v"),
                       course_logo=None, course_code=C.COURSE_CODE)
 prodoc.add_version_control(doc,[
  ("10.0","1 June 2026","Legacy learner guide aligned to the v10 master trainer slides.","Han Leong"),
- (C.VERSION.lstrip("v"),C.VERSION_DATE,
+ ("11.0","10 August 2026",
   "Full redesign: regenerated from the single-source content pipeline with six step-by-step hands-on activities (cash flow statement, ratio analysis, trend analysis, payback, NPV/PI, solvency), revision pointers and a glossary.",C.TRAINER),
+ (C.VERSION.lstrip("v"),C.VERSION_DATE,
+  "Added realistic mock-data workbooks (Excel + CSV, one folder per activity with named fictitious SMEs) and rewrote every activity as a detailed data-analysis walkthrough: exact sheets, cell formulas, expected values and interpretation at each step.",C.TRAINER),
 ])
 prodoc.add_toc(doc)
 

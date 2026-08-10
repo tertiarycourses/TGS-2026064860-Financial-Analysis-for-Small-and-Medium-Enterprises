@@ -62,7 +62,7 @@ def _logo(name):
 ORG_LOGO    = _logo("tertiary-infotech-logo.png")
 COURSE_LOGO = None   # Tertiary-only cover (as LP/LG)
 
-Q_VER, A_VER = "v4", "v4"   # original TMS/Drive paper is v3 → this revision is v4
+Q_VER, A_VER = "v5", "v5"   # v4 + mock-data workbook (Company A and B, 3 years)
 BRAND = RGBColor(0x1F, 0x6F, 0xEB); DARK = RGBColor(0x11, 0x18, 0x27); GREY = RGBColor(0x55, 0x5B, 0x66)
 # Assessments carry the cover page only — no Document Version Control Record.
 
@@ -146,15 +146,18 @@ WRITTEN = [
 SCENARIO = (
  "You are a senior financial analyst at a consultancy firm that specializes in providing financial advice to "
  "small and medium enterprises (SMEs). One of your clients, a successful small business owner, is considering "
- "expanding their portfolio by investing in one of two potential companies, Company A and Company B. The "
- "client has asked you to perform a detailed financial analysis to identify trends and evaluate the "
- "companies' performance over multiple time periods to make an informed investment decision.")
+ "expanding their portfolio by investing in one of two potential companies: Company A (Kestrel Precision "
+ "Engineering Pte Ltd) and Company B (Lighthouse Marine Supplies Pte Ltd). Their balance sheets and income "
+ "statements for the last three years are provided in the data workbook 'PP Data - Financial Analysis for "
+ "Small and Medium Enterprises - Company A and B.xlsx' issued with this paper. The client has asked you to "
+ "perform a detailed financial analysis to identify trends and evaluate the companies' performance over "
+ "multiple time periods to make an informed investment decision.")
 
 BOX_CAP = "Paste a screenshot of your analysis in the box below"
 PRACTICAL = [
  ("Task 1", "A1",
-  "You have been provided with the financial statements (balance sheet and income statement) of Company A "
-  "and Company B for the last three years. Analyze the financial ratios or indicators over this period — for "
+  "Using the three-year balance sheets and income statements of Company A and Company B in the data "
+  "workbook provided, analyze the financial ratios or indicators over this period — for "
   "example Return on Equity (ROE), Return on Assets (ROA), Net Profit Margin, Current Ratio, and "
   "Debt-to-Equity Ratio, or others. Identify trends in these ratios and discuss how they reflect the "
   "financial health and risk associated with each company. Based on these trends, recommend which company "
@@ -174,7 +177,7 @@ PRACTICAL = [
   "   (Worked illustration from class: ROE, ROA and net profit margin are computed for both companies and\n"
   "   compared — the company that performs better on all the required metrics is the better choice.)"),
  ("Task 2", "A2",
-  "Using the provided financial statements for Company A, calculate the DuPont analysis to break down Return "
+  "Using Company A's Year 3 financial statements in the data workbook provided, calculate the DuPont analysis to break down Return "
   "on Equity (ROE) into its components: Net Profit Margin, Asset Turnover, and Equity Multiplier. Interpret "
   "each component to assess the company's operating efficiency, asset utilization, and financial leverage. "
   "Based on your analysis, explain whether Company A's financial position and performance indicate a strong "
@@ -186,7 +189,8 @@ PRACTICAL = [
   "  - Operating efficiency  -> Net Profit Margin = Net Income / Sales (net income per dollar of sales).\n"
   "  - Asset utilization     -> Total Asset Turnover = Sales / Total Assets (sales per dollar of assets).\n"
   "  - Financial leverage    -> Equity Multiplier = Total Assets / Total Equity.\n"
-  "Worked example (Company A):\n"
+  "Worked example (Company A, Year 3 of the data workbook: sales 140,000; net income 36,000;\n"
+  "total assets 310,000; equity 135,000):\n"
   "  Net Profit Margin   = $36,000 / $140,000  = 25.71%\n"
   "  Total Asset Turnover = $140,000 / $310,000 = 45.17%\n"
   "  Equity Multiplier    = $310,000 / $135,000 = 2.30\n"

@@ -1,6 +1,6 @@
 # Financial Analysis for Small and Medium Enterprises — Learner Guide
 
-**WSQ Course Code:** TGS-2026064860  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v11 · 10 August 2026**
+**WSQ Course Code:** TGS-2026064860  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v12 · 11 August 2026**
 
 ## Contents
 
@@ -23,7 +23,7 @@
 
 ## Introduction
 
-This Learner Guide accompanies the WSQ course Financial Analysis for Small and Medium Enterprises (TGS-2026064860), conducted by Tertiary Infotech Academy Pte Ltd. It provides the key concepts for each of the three topics and detailed step-by-step instructions for all six hands-on activities. Each activity uses a worksheet downloadable from the course LMS (https://lms-tms.tertiaryinfotech.com) and is completed in Microsoft Excel or Google Sheets.
+This Learner Guide accompanies the WSQ course Financial Analysis for Small and Medium Enterprises (TGS-2026064860), conducted by Tertiary Infotech Academy Pte Ltd. It provides the key concepts for each of the three topics and detailed step-by-step instructions for all six hands-on activities. Each activity analyses a realistic mock-data workbook (Excel + CSV, fictitious Singapore SMEs) from its own folder under activities/ — also downloadable from the course LMS (https://lms-tms.tertiaryinfotech.com) — and is completed in Microsoft Excel or Google Sheets.
 
 Use this guide alongside the course slides. The final assessment is open book: you may refer to the slides, this Learner Guide and any approved materials, so keep your completed activity worksheets — they are your best revision notes.
 
@@ -54,7 +54,8 @@ TSC Title: Financial Analysis · TSC Code: ACC-MAC-5004-1.1
 
 - A laptop with Microsoft Excel (2016 or later) or a Google account for Google Sheets.
 - Access to the course LMS at https://lms-tms.tertiaryinfotech.com — log in with your registered email (an OTP is sent to you).
-- The activity worksheets, downloaded from your course page on the LMS.
+- The mock-data workbooks: each activity has its own folder (activities/activity01 … activity06, also in the Activities folder on the LMS) holding the activity guide (.md), a formatted Excel workbook (.xlsx) and the raw data as .csv files.
+- All company data is fictitious and prepared for training use only.
 - A calculator (or the spreadsheet itself) for the ratio and discounting computations.
 
 **Conventions used in every activity**
@@ -83,63 +84,76 @@ Overview of Finance and Chart of Accounts · Balance Sheet Statement · Profit a
 
 Maps to: LO1 — understand the balance sheet, income and cash flow statements (K1, K2, K3).
 
-Goal: You are given the Balance Sheet (2018 and 2019) and the Income Statement (2019) of a company, all figures in $ million. Working in Excel or on paper, derive the statement of cash flows — operating, investing and financing — and reconcile it to the change in cash.
+Goal: Havenwood Trading Pte Ltd is a fictitious Singapore SME distributor. From its FY2018/FY2019 balance sheets and FY2019 income statement (all in S$ million), derive the full statement of cash flows — operating, investing and financing — and reconcile it to the movement in cash.
 
 **What you'll produce**
 
-A complete statement of cash flows (operating / investing / financing) derived from the balance sheet and income statement.   (Tools: Microsoft Excel (or Google Sheets), activity worksheet from the LMS.)
+A complete statement of cash flows (operating / investing / financing) for Havenwood Trading, derived from the balance sheet movements and the income statement.   (Tools: Microsoft Excel · data workbook FA-Activity-01-Cash-Flow-Statement.xlsx in activities/activity01.)
 
 **Data provided**
 
-- Balance Sheet 2019: Fixed Assets 100 · Receivables 50 · Inventory 30 · Cash 20 · Total Assets 200 | Equity 80 · Loans 50 · Payables 40 · Provisions 30 · Total 200
-- Balance Sheet 2018: Fixed Assets 90 · Receivables 50 · Inventory 30 · Cash 20 · Total Assets 190 | Equity 80 · Loans 55 · Payables 35 · Provisions 20 · Total 190
-- Income Statement 2019: Revenue 50 · COGS 10 · Operational costs 20 · Depreciation 5 · Interest 3 · Tax 2 · Net Income 10
+- Workbook: FA-Activity-01-Cash-Flow-Statement.xlsx — sheets: 'Balance Sheet' (FY2019 in column B, FY2018 in column C), 'Income Statement' (FY2019 in column B), 'Your Workings' (answer template)
+- Balance Sheet (FY2019 | FY2018): PP&E 100 | 90 · Receivables 50 | 50 · Inventory 30 | 30 · Cash 20 | 20 · Equity 80 | 80 · Bank loans 50 | 55 · Payables 40 | 35 · Provisions 30 | 20 (S$m)
+- Income Statement FY2019: Revenue 50 (wholesale 38 + retail 12) · COGS 10 · Operational costs 20 (salaries 12, rental 4, utilities/logistics 4) · Depreciation 5 · Interest 3 · Tax 2 · Net income 10 (S$m)
 
 **Step-by-step**
 
-1. Download the activity worksheet 'Cash Flow Statement' from the LMS (lms-tms.tertiaryinfotech.com) and open it in Excel.
-2. Compute EBITDA from the income statement: Revenue − COGS − Operational costs = 50 − 10 − 20 = 20.
+1. Open FA-Activity-01-Cash-Flow-Statement.xlsx from activities/activity01 (or download it from the Activities folder on the LMS). Study the 'Balance Sheet' sheet: FY2019 is column B, FY2018 is column C. Note that both years balance: Total assets (row 11) = Total equity and liabilities (row 17) = 200 and 190.
+2. Read the 'Income Statement' sheet from top to bottom and confirm the profit cascade: Revenue 50 − COGS 10 − Operational costs 20 = EBITDA 20 (cell B16); then − Depreciation 5 − Interest 3 − Tax 2 = Net income 10 (cell B20).
+
+   ```
+   B16 = B9 - B10 - B15 = 50 - 10 - 20 = 20
+   ```
+
+3. Go to the 'Your Workings' sheet. Start the OPERATING block with EBITDA from the income statement: enter 20. Cash flow always starts from operating earnings BEFORE the non-cash charges (depreciation is added back by starting at EBITDA rather than net income).
 
    ```
    EBITDA = 20
    ```
 
-3. Compute Net Working Capital movement: NWC = Payables − Receivables − Inventory = 40 − 50 − 30 = −40 (2019) vs 35 − 50 − 30 = −45 (2018); the change is −5.
+4. Deduct the tax actually PAID in cash, not the P&L charge: the S$2m FY2019 charge plus a S$5m prior-year settlement = S$7m out. Enter −7. (Lesson: the P&L tax line and the tax cash flow are rarely the same number.)
 
    ```
-   ΔNWC = −5
+   Tax paid = -(2 + 5) = -7
    ```
 
-4. Build the Operating Cash Flow block: EBITDA 20, Tax −6, Change in NWC −5, Change in Provisions +10 → Operating Cash Flow = 18.
+5. Compute the working-capital adjustment from the balance-sheet movements: receivables and inventory were held flat while the business grew, but S$5m of supplier bills from FY2018 were settled during the year before new payables built up — a net S$5m use of cash. Enter −5.
 
    ```
-   OCF = 20 − 6 − 5 + 10 = 18
+   Working-capital adjustment = -5   (NWC: payables 40 − receivables 50 − inventory 30 = -40 vs -45 in FY2018)
    ```
 
-5. Build the Investing Cash Flow block: Change in Fixed Assets −10, Depreciation 2019 −5, Change in trade payables on capex +1 → Investing Cash Flow = −14.
+6. Add the change in provisions — provisions rose from 20 to 30 (row 16), a non-cash source of 10: enter +10. Total the OPERATING block.
 
    ```
-   ICF = −10 − 5 + 1 = −14
+   Operating cash flow = 20 - 7 - 5 + 10 = 18
    ```
 
-6. Build the Financing Cash Flow block: Change in financial debt −5 (loans 55 → 50), Interest cost −3, Change in earnings −6 → Financing Cash Flow = −14.
+7. Build the INVESTING block from the fixed-asset movement. PP&E (net) rose 90 → 100 while 5 of depreciation was charged, so gross capex = change in fixed assets 10 + depreciation 5 = 15 spent; 1 of it was still owed to equipment vendors (payables on capex). Enter −10, −5, +1 and total: −14.
 
    ```
-   FCF = −5 − 3 − 6 = −14
+   Investing cash flow = -10 - 5 + 1 = -14
    ```
 
-7. Compute the Net Cash Flow and reconcile: 18 − 14 − 14 = −10.
+8. Build the FINANCING block: bank loans fell 55 → 50 (repayment −5); interest paid −3; dividends/drawings took out the year's retained profit movement −6 (equity stayed at 80 despite net income 10 less adjustments). Total: −14.
 
    ```
-   Net Cash Flow = −10
+   Financing cash flow = -5 - 3 - 6 = -14
    ```
 
+9. Compute the NET cash flow: 18 − 14 − 14 = −10, and write one sentence of interpretation: Havenwood is operationally cash-generative (+18) but spent more on capex and debt service than operations produced this year — the cash buffer fell by S$10m.
+
+   ```
+   Net cash flow = 18 - 14 - 14 = -10
+   ```
+
+10. Cross-check the story against the three statements: profit was +10 yet cash moved −10 — point to the capex (−15 gross) and loan repayment (−5) as the difference between profit and cash. This is the K3 insight the assessment asks for.
 
 **Test it**
 
-Your three blocks total 18 (operating), −14 (investing) and −14 (financing), giving a net cash flow of −10 that reconciles with the balance-sheet movement.
+Your three blocks total +18 (operating), −14 (investing) and −14 (financing), net −10 — matching the model answer — and you can explain in one sentence why a profitable year still drained cash.
 
-> **Note:** The full worksheet for this activity is available on the LMS, and a printable copy is in activities/activity-01 of the course repository.
+> **Note:** Everything for this activity lives in activities/activity01/ of the course repository (and in the Activities folder on the LMS): this guide, the Excel data workbook and the raw data as CSV files.
 
 ---
 
@@ -162,88 +176,91 @@ Ratios for Corporate Profitability · Ratios for Corporate Performance · Equity
 
 Maps to: LO2 — evaluate financial performance from financial ratios (K4, A1).
 
-Goal: You are a financial analyst evaluating two companies, X and Y, from their balance sheets and income statements. Compute the liquidity, profitability, turnover and solvency ratios for both companies and comment on which company performs better on each parameter.
+Goal: Orchid Logistics Pte Ltd (Company X) and Marina Retail Group Pte Ltd (Company Y) are two fictitious SMEs. From their FY2025 balance sheets and income statements, compute the liquidity, profitability, turnover and solvency ratios for both companies and give a one-line verdict per ratio family on which company performs better.
 
 **What you'll produce**
 
-A completed ratio-analysis worksheet comparing Company X and Company Y across four ratio families, with a one-line verdict per ratio.   (Tools: Microsoft Excel (or Google Sheets), activity worksheet from the LMS.)
+A completed ratio-analysis worksheet comparing Company X and Company Y across four ratio families, with a one-line verdict per ratio.   (Tools: Microsoft Excel · data workbook FA-Activity-02-Ratio-Analysis.xlsx in activities/activity02.)
 
 **Data provided**
 
-- Balance Sheet (X | Y): Cash 50,000 | 80,000 · Inventory 40,000 | 70,000 · AR 100,000 | 250,000 · Property 400,000 | 450,000 · Other FA 60,000 | 50,000 · Total 650,000 | 900,000
-- Liabilities (X | Y): AP 100,000 | 150,000 · ST Loans 80,000 | 70,000 · LT Liabilities 300,000 | 500,000 · Capital 170,000 | 180,000
-- Income Statement (X | Y): Sales 300,000 | 500,000 · COGS 140,000 | 200,000 · S&D 50,000 | 60,000 · EBIT 100,000 | 228,000 · Interest 10,000 | 18,000 · Tax 18,000 | 42,000 · Net Income 72,000 | 168,000
+- Workbook: FA-Activity-02-Ratio-Analysis.xlsx — sheets: 'Balance Sheet' (X in column B, Y in column C), 'Income Statement' (X in B, Y in C), 'Your Workings' (ratio template)
+- Balance Sheet (X | Y): Cash 50,000 | 80,000 · Inventory 40,000 | 70,000 · Receivables 100,000 | 250,000 · Property 400,000 | 450,000 · Other FA 60,000 | 50,000 · Total assets 650,000 | 900,000
+- Liabilities & equity (X | Y): Payables 100,000 | 150,000 · ST loans 80,000 | 70,000 · LT liabilities 300,000 | 500,000 · Capital 170,000 | 180,000
+- Income Statement (X | Y): Sales 300,000 | 500,000 · COGS 140,000 | 200,000 · Gross profit 160,000 | 300,000 · EBIT 100,000 | 228,000 · Interest 10,000 | 18,000 · Net income 72,000 | 168,000
 
 **Step-by-step**
 
-1. Download the activity worksheet 'Ratio Analysis' from the LMS and open it in Excel.
-2. Liquidity — Current Ratio = Current Assets / Current Liabilities. X: 190,000/180,000 = 1.06; Y: 400,000/220,000 = 1.82. Y is more liquid.
+1. Open FA-Activity-02-Ratio-Analysis.xlsx. On the 'Balance Sheet' sheet, Company X is column B and Company Y is column C. First aggregate the raw ingredients on the 'Your Workings' sheet: Current assets = Cash + Inventory + Receivables (rows 7–9); Current liabilities = Payables + ST loans (rows 15–16).
 
    ```
-   X 1.06 · Y 1.82
+   CA(X) ='Balance Sheet'!B7+B8+B9 = 190,000 · CL(X) = B15+B16 = 180,000
+CA(Y) = 400,000 · CL(Y) = 220,000
    ```
 
-3. Liquidity — Quick Ratio = (Current Assets − Inventory) / Current Liabilities. X: 150,000/180,000 = 0.83; Y: 330,000/220,000 = 1.50.
+2. LIQUIDITY — Current Ratio = Current Assets / Current Liabilities. Compute for both companies and interpret against the ≥1 benchmark from the slides.
 
    ```
-   X 0.83 · Y 1.50
+   X: 190,000/180,000 = 1.06 · Y: 400,000/220,000 = 1.82 → Y is more liquid
    ```
 
-4. Profitability — Operating Profit Ratio = EBIT / Sales. X: 100,000/300,000 = 33%; Y: 228,000/500,000 = 46%.
+3. LIQUIDITY — Quick Ratio = (Current Assets − Inventory) / Current Liabilities. Inventory is the least liquid current asset, so strip it out and recompute.
 
    ```
-   X 33% · Y 46%
+   X: 150,000/180,000 = 0.83 · Y: 330,000/220,000 = 1.50
    ```
 
-5. Profitability — Net Profit Ratio = Net Income / Sales. X: 72,000/300,000 = 24%; Y: 168,000/500,000 = 34%.
+4. PROFITABILITY — Operating Profit Ratio = EBIT / Sales, using 'Income Statement' row 12 (EBIT) over row 6 (Sales). Express as a percentage.
 
    ```
-   X 24% · Y 34%
+   X: 100,000/300,000 = 33% · Y: 228,000/500,000 = 46%
    ```
 
-6. Profitability — Return on Capital Employed = EBIT / Capital Employed. X: 100,000/470,000 = 21%; Y: 228,000/680,000 = 34%.
+5. PROFITABILITY — Net Profit Ratio = Net Income / Sales (row 16 over row 6). Note how the gap versus the operating margin reveals the drag from interest and tax.
 
    ```
-   X 21% · Y 34%
+   X: 72,000/300,000 = 24% · Y: 168,000/500,000 = 34%
    ```
 
-7. Turnover — Inventory Turnover = COGS / Average Inventory. X: 140,000/40,000 = 3.50; Y: 200,000/70,000 = 2.86. X turns stock faster.
+6. PROFITABILITY — Return on Capital Employed = EBIT / Capital Employed, where Capital Employed = Equity + Long-Term Liabilities (the long-term funding of the business).
 
    ```
-   X 3.50 · Y 2.86
+   Cap employed X: 170,000+300,000 = 470,000 → 100,000/470,000 = 21%
+Cap employed Y: 180,000+500,000 = 680,000 → 228,000/680,000 = 34%
    ```
 
-8. Turnover — Receivables Turnover = Credit Sales / Average Receivables. X: 300,000/100,000 = 3.00; Y: 500,000/250,000 = 2.00.
+7. TURNOVER — Inventory Turnover = COGS / Average Inventory (use the year-end balance as the average). A higher figure means stock moves faster.
 
    ```
-   X 3.00 · Y 2.00
+   X: 140,000/40,000 = 3.50 · Y: 200,000/70,000 = 2.86 → X turns stock faster
    ```
 
-9. Turnover — Payables Turnover (assume purchases = 50% of COGS). X: 70,000/100,000 = 0.70; Y: 100,000/150,000 = 0.67.
+8. TURNOVER — Receivables Turnover = Credit Sales / Average Receivables (treat all sales as credit sales). Then convert to days: Average Collection Period = 365 / turnover.
 
    ```
-   X 0.70 · Y 0.67
+   X: 300,000/100,000 = 3.00 → 122 days · Y: 500,000/250,000 = 2.00 → 183 days
    ```
 
-10. Solvency — Debt-to-Equity = Long-Term Debt / Equity. X: 300,000/170,000 = 1.76; Y: 500,000/180,000 = 2.78. Y is more leveraged.
+9. TURNOVER — Payables Turnover = Purchases / Average Payables, assuming purchases = 50% of COGS.
 
    ```
-   X 1.76 · Y 2.78
+   X: 70,000/100,000 = 0.70 · Y: 100,000/150,000 = 0.67
    ```
 
-11. Solvency — Financial Leverage = Total Assets / Equity. X: 650,000/170,000 = 3.82; Y: 900,000/180,000 = 5.00.
+10. SOLVENCY — Debt-to-Equity = Long-Term Liabilities / Equity, and Financial Leverage = Total Assets / Equity. Higher values = more of the balance sheet is funded by lenders.
 
    ```
-   X 3.82 · Y 5.00
+   D/E — X: 300,000/170,000 = 1.76 · Y: 500,000/180,000 = 2.78
+Leverage — X: 650,000/170,000 = 3.82 · Y: 900,000/180,000 = 5.00
    ```
 
-12. Write a one-line verdict per ratio family: Y wins on liquidity and profitability; X wins on turnover efficiency and carries less solvency risk.
+11. Write the verdicts in the 'Your Workings' sheet, one line per family: Y wins on liquidity and profitability; X wins on turnover efficiency and carries materially less solvency risk. Note how Y's higher ROE partly comes from leverage, not just operations — the DuPont insight.
 
 **Test it**
 
-Your worksheet shows all ten ratios for both companies and your verdicts match the model answers (e.g. Current Ratio X 1.06 vs Y 1.82; D/E X 1.76 vs Y 2.78).
+Your worksheet shows all ten ratios for both companies matching the model answers (e.g. Current Ratio X 1.06 vs Y 1.82; D/E X 1.76 vs Y 2.78), with a one-line verdict per ratio family.
 
-> **Note:** The full worksheet for this activity is available on the LMS, and a printable copy is in activities/activity-02 of the course repository.
+> **Note:** Everything for this activity lives in activities/activity02/ of the course repository (and in the Activities folder on the LMS): this guide, the Excel data workbook and the raw data as CSV files.
 
 ---
 
@@ -252,44 +269,73 @@ Your worksheet shows all ten ratios for both companies and your verdicts match t
 
 Maps to: LO2 — identify trends by comparing ratios across time periods (K5, A1).
 
-Goal: You are given four years (2018–2021) of a company's balance sheet and income statement. Compute year-on-year growth for every line item, derive the key ratios for each year, and present your observations on the company's direction.
+Goal: Sunrise F&B Holdings Pte Ltd is a fictitious cafe-chain SME. From four years (FY2018–FY2021) of balance sheets and income statements, compute year-on-year growth for every line, derive the key ratios for each year, and present your observations on where the business is heading.
 
 **What you'll produce**
 
-A completed trend-analysis template: YoY growth for every balance-sheet and income-statement line plus a four-year ratio table with your observations.   (Tools: Microsoft Excel (or Google Sheets), activity template from the LMS.)
+A completed trend-analysis template: YoY growth for every balance-sheet and income-statement line plus a four-year ratio table with your observations.   (Tools: Microsoft Excel · data workbook FA-Activity-03-Trend-Analysis.xlsx in activities/activity03.)
 
 **Data provided**
 
-- Sales 2018→2021: 180,000 → 198,000 → 217,800 → 239,580 (10% p.a.)
-- Net Income 2018→2021: 53,600 → 64,601 → 76,872 → 90,548
-- Total Assets 2018→2021: 330,000 → 324,800 → 329,983 → 339,581
+- Workbook: FA-Activity-03-Trend-Analysis.xlsx — sheets: 'Balance Sheet 2018-2021' and 'Income Statement 2018-2021' (FY2021 in column B through FY2018 in column E), 'Trend Template'
+- Sales FY2018→FY2021: 180,000 → 198,000 → 217,800 → 239,580 (10% p.a.)
+- Net income FY2018→FY2021: 53,600 → 64,601 → 76,872 → 90,548
+- Total assets FY2018→FY2021: 330,000 → 324,800 → 329,983 → 339,581
 
 **Step-by-step**
 
-1. Download the activity template 'Trend Analysis' from the LMS and open it in Excel.
-2. Fill the YoY Growth columns of the balance sheet: growth = (this year − last year) / last year. E.g. Inventory 2021 = (40,000 − 34,000)/34,000 = 17.65%.
+1. Open FA-Activity-03-Trend-Analysis.xlsx. Years run LEFT to RIGHT from newest: FY2021 (column B) to FY2018 (column E). Skim both statement sheets and note what is obviously moving: sales up every year, payables up sharply, property drifting down.
+2. Compute YoY growth for each income-statement line: growth = (this year − last year) / last year. In Excel, put the formula beside FY2021 and fill across.
 
    ```
-   =(C5-E5)/E5
+   =(B6-C6)/C6 → Sales FY2021 growth = (239,580-217,800)/217,800 = 10.0%
    ```
 
-3. Fill the YoY Growth columns of the income statement. Sales grow a steady 10% each year while COGS grows only 5% — so Gross Profit growth accelerates (14.47% → 13.78%).
-4. Compute the liquidity ratios per year: Current Ratio falls from 2.13 (2018) to 1.64 (2021); Acid Ratio falls from 1.47 to 1.22.
+3. Read the growth pattern: Sales grow a steady 10% while COGS grows only 5% — so Gross Profit growth runs ahead of sales (14.5% → 13.8%) and EBIT growth is faster still. Fixed S&D expenses (flat 20,000) create operating leverage.
 
    ```
-   Current = CA/CL
+   COGS: =(B7-C7)/C7 = 5.0% each year
    ```
 
-5. Compute the efficiency ratios per year: Asset Turnover rises 0.55 → 0.72; Inventory Turnover rises 4.00 → 6.48; Receivables Turnover rises 3.00 → 3.29.
-6. Compute the leverage ratios per year: Debt-to-Equity rises 0.56 → 0.75; Debt-to-Assets rises 0.36 → 0.43.
-7. Compute the profitability ratios per year: Operating Margin rises 0.40 → 0.49; Net Profit Margin rises 0.30 → 0.38.
-8. Write your observations: profitability and efficiency improve steadily; liquidity declines and leverage creeps up — flag the falling current ratio as the trend to watch.
+4. Repeat for the balance sheet lines. Flag the working-capital lines: Accounts payable grew 25.0% in FY2021 (75,000 vs 60,000) while inventory grew 17.6% — the company is stretching its suppliers.
+
+   ```
+   =(B15-C15)/C15 = 25.0%
+   ```
+
+5. Now derive the LIQUIDITY ratios per year in the 'Trend Template': Current Ratio = (Cash + Inventory + Receivables) / (Payables + ST loans); Acid Ratio strips inventory.
+
+   ```
+   FY2021: 155,583/95,000 = 1.64 · FY2018: 145,000/68,000 = 2.13
+Acid: FY2021 1.22 · FY2018 1.47
+   ```
+
+6. Derive the EFFICIENCY ratios per year: Asset Turnover = Sales/Total assets; Inventory Turnover = COGS/Inventory; Receivables Turnover = Sales/Receivables; Payables Turnover = Purchases/Payables with purchases = 50% of COGS.
+
+   ```
+   Asset turnover: 0.55 → 0.72 · Inventory turnover: 4.00 → 6.48
+Receivables: 3.00 → 3.29 · Payables: 0.99 → 0.73
+   ```
+
+7. Derive the LEVERAGE ratios per year: Debt-to-Equity = (ST loans + LT liabilities)/Capital; Debt-to-Assets = (ST loans + LT liabilities + Payables)/Total assets.
+
+   ```
+   D/E: 0.56 (FY2018) → 0.75 (FY2021) · D/A: 0.36 → 0.43
+   ```
+
+8. Derive the PROFITABILITY ratios per year: Operating Margin = EBIT/Sales; Net Profit Margin = Net income/Sales.
+
+   ```
+   Operating margin: 0.40 → 0.49 · Net margin: 0.30 → 0.38
+   ```
+
+9. Write your observations under the template — cover all four families: (1) profitability and efficiency improve steadily (margins, asset and inventory turnover all up); (2) liquidity deteriorates (current ratio 2.13 → 1.64) as payables are stretched; (3) leverage creeps up (D/E 0.56 → 0.75); (4) verdict: a profitable, tightening business — watch the falling current ratio and the supplier stretch.
 
 **Test it**
 
-Your ratio table matches the model answers (e.g. 2021 Current Ratio 1.64, Net Profit Margin 0.38) and your observations cover profitability, efficiency, liquidity and leverage trends.
+Your ratio table matches the model answers (e.g. FY2021 Current Ratio 1.64, Net Profit Margin 0.38, D/E 0.75) and your observations cover profitability, efficiency, liquidity and leverage.
 
-> **Note:** The full worksheet for this activity is available on the LMS, and a printable copy is in activities/activity-03 of the course repository.
+> **Note:** Everything for this activity lives in activities/activity03/ of the course repository (and in the Activities folder on the LMS): this guide, the Excel data workbook and the raw data as CSV files.
 
 ---
 
@@ -312,51 +358,52 @@ Analyse Financial Statements · Financial Planning · Capital Budgeting
 
 Maps to: LO3 — evaluate a capital investment using payback methods (K5, A2).
 
-Goal: A project requires an initial outlay of $2,000 and returns $375 per year for 10 years. Compute the simple payback period, then repeat the exercise discounting each cash flow at 10% to find the discounted payback period.
+Goal: Havenwood Trading is evaluating a refrigerated delivery van: S$2,000k outlay in Year 0, saving S$375k per year for 10 years versus outsourced cold-chain delivery. Compute the simple payback period, then discount each cash flow at the 10% required return to find the discounted payback.
 
 **What you'll produce**
 
-A payback worksheet showing cumulative cash flow per year, the simple payback point (~5.3 years) and the discounted payback point (~8 years).   (Tools: Microsoft Excel (or Google Sheets), activity worksheet from the LMS.)
+A payback worksheet showing cumulative cash flow per year, the simple payback point (5.33 years) and the discounted payback point (≈8 years).   (Tools: Microsoft Excel · data workbook FA-Activity-04-Payback-Period.xlsx in activities/activity04.)
 
 **Data provided**
 
-- Cash flows: Year 0: −$2,000; Years 1–10: +$375 per year
-- Discount rate: 10% for the discounted payback
+- Workbook: FA-Activity-04-Payback-Period.xlsx — sheet 'Project Cash Flows': Year in column A (rows 6–16), net cash flow in column B; columns C–E are your templates (cumulative, discounted, cumulative discounted)
+- Cash flows: Year 0: −S$2,000k · Years 1–10: +S$375k per year (all figures S$'000)
+- Discount rate: 10% — Havenwood's required return on internal projects
 
 **Step-by-step**
 
-1. Download the activity worksheet 'Cash Flow Payback' from the LMS and open it in Excel.
-2. Build the cumulative cash flow column: 375, 750, 1,125, 1,500, 1,875, 2,250 … the cumulative figure passes $2,000 during Year 6.
+1. Open FA-Activity-04-Payback-Period.xlsx, sheet 'Project Cash Flows'. Year 0 (the −2,000 outlay) is row 6; Years 1–10 with +375 each are rows 7–16.
+2. Build the cumulative cash flow in column C: start at C7 with =B7, then C8 =C7+B8 and fill down to C16. Watch where the running total passes 2,000.
 
    ```
-   =SUM($B$2:B7)
+   C7 =B7 → 375 · C8 =C7+B8 → 750 … C12 → 2,250 (passes 2,000 in Year 6)
    ```
 
-3. Compute the simple payback period: 2,000 / 375 = 5.33 years (about 5 years 4 months).
+3. Compute the simple payback period exactly: full years until the outlay is nearly recovered (5 years → 1,875), plus the fraction of Year 6 needed: (2,000 − 1,875)/375.
 
    ```
-   Payback = 2000/375 = 5.33 yr
+   Payback = 5 + 125/375 = 5.33 years  (= 2000/375 for an even stream)
    ```
 
-4. Add a discounted cash flow column: DCF = 375 / (1.10)^n → 340.91, 309.92, 281.74, 256.13, 232.85, 211.68, 192.43, 174.94 …
+4. Now build the discounted column D: each year's cash flow divided by (1.10)^year. Enter =B7/(1.1)^A7 in D7 and fill down.
 
    ```
-   =375/(1.1)^A2
+   D7 = 375/1.1 = 340.91 · D8 = 309.92 · D9 = 281.74 · D10 = 256.13 · D11 = 232.85
    ```
 
-5. Build the cumulative discounted column: 340.91, 650.83, 932.57, 1,188.70, 1,421.55, 1,633.22, 1,825.66, 2,000.60 — it crosses $2,000 in Year 8.
-6. State the discounted payback period: ≈ 8 years, and explain why discounting lengthens the payback.
+5. Build the cumulative discounted column E the same way as column C and read down for the 2,000 crossing: 340.91, 650.83, 932.57, 1,188.70, 1,421.55, 1,633.22, 1,825.66, 2,000.60 — it crosses during Year 8.
 
    ```
-   Discounted payback ≈ 8.0 yr
+   E14 (Year 8) = 2,000.60 ≥ 2,000 → discounted payback ≈ 8.0 years
    ```
 
+6. Interpret the gap on the 'Your Workings' sheet: discounting stretches the payback from 5.33 to ≈8 years because later savings are worth less today. State when payback is the right tool (quick liquidity screen) and its blind spots (ignores cash flows AFTER payback, and simple payback ignores the time value of money).
 
 **Test it**
 
-Your cumulative discounted cash flow reaches $2,000.60 at Year 8 — the discounted payback (~8 years) is materially longer than the simple payback (5.33 years).
+Your cumulative discounted cash flow reaches S$2,000.60k at Year 8 — the discounted payback (≈8 years) is materially longer than the simple payback (5.33 years), and you can say why.
 
-> **Note:** The full worksheet for this activity is available on the LMS, and a printable copy is in activities/activity-04 of the course repository.
+> **Note:** Everything for this activity lives in activities/activity04/ of the course repository (and in the Activities folder on the LMS): this guide, the Excel data workbook and the raw data as CSV files.
 
 ---
 
@@ -365,51 +412,62 @@ Your cumulative discounted cash flow reaches $2,000.60 at Year 8 — the discoun
 
 Maps to: LO3 — evaluate a capital investment using NPV and PI (K5, A2).
 
-Goal: Using the same project ($2,000 outlay, $375/year for 10 years, 10% required return), compute the Net Present Value and the Profitability Index, and decide whether to accept the project.
+Goal: Using the same delivery-van proposal (S$2,000k outlay, S$375k/year for 10 years, 10% required return), compute the Net Present Value and the Profitability Index, and make the accept/reject recommendation to management.
 
 **What you'll produce**
 
-An NPV/PI worksheet: PV of each inflow, NPV ≈ $304, PI ≈ 1.15, and an accept/reject decision.   (Tools: Microsoft Excel (or Google Sheets), activity worksheet from the LMS.)
+An NPV/PI worksheet: PV of each inflow, NPV ≈ S$304k, PI ≈ 1.15, and a reasoned accept decision.   (Tools: Microsoft Excel · data workbook FA-Activity-05-NPV-PI.xlsx in activities/activity05.)
 
 **Data provided**
 
-- Cash flows: Year 0: −$2,000; Years 1–10: +$375 per year
+- Workbook: FA-Activity-05-NPV-PI.xlsx — sheet 'Project Cash Flows': Year in column A (rows 6–16), net cash flow in column B, discounted-cash-flow template in column C; 'Your Workings' for NPV/PI
+- Cash flows: Year 0: −S$2,000k · Years 1–10: +S$375k per year (S$'000)
 - Required return: 10%
 
 **Step-by-step**
 
-1. Download the activity worksheet 'Discounted Cash Flow' from the LMS and open it in Excel.
-2. Discount each inflow at 10%: 341, 310, 282, 256, 233, 212, 192, 175, 159, 145.
+1. Open FA-Activity-05-NPV-PI.xlsx, sheet 'Project Cash Flows'. Discount each inflow in column C with =B7/(1.1)^A7 filled down rows 7–16.
 
    ```
-   =375/(1.1)^A2
+   341, 310, 282, 256, 233, 212, 192, 175, 159, 145  (S$'000, rounded)
    ```
 
-3. Sum the discounted inflows: PV of cash inflows = $2,304.
+2. Sum the discounted inflows to get the present value of what the van gives back.
 
    ```
-   PV inflows = 2,304
+   PV of inflows =SUM(C7:C16) = 2,304
    ```
 
-4. Compute NPV = PV of inflows − initial outlay = 2,304 − 2,000 = $304 (or use =NPV(10%, range) − 2000).
+3. Compute NPV = PV of inflows − outlay. Cross-check with Excel's NPV function — note it discounts from Year 1, so the Year-0 outlay stays outside it.
 
    ```
-   NPV = 304
+   NPV = 2,304 - 2,000 = 304   (=NPV(10%,B7:B16)+B6)
    ```
 
-5. Compute the Profitability Index = PV of inflows / PV of outflows = 2,304 / 2,000 = 1.15.
+4. Compute the Profitability Index = PV of inflows / PV of outflows — the value created per dollar invested.
 
    ```
-   PI = 1.15
+   PI = 2,304 / 2,000 = 1.15
    ```
 
-6. Decide: NPV > 0 and PI > 1 → accept the project; note how the decision rule would flip if the discount rate rose.
+5. Make the decision on 'Your Workings': NPV > 0 AND PI > 1 → ACCEPT. Write the recommendation as you would to management: 'the van creates S$304k of value at our 10% hurdle; every dollar invested returns S$1.15 of present value'.
+
+   ```
+   Accept: NPV 304 > 0 · PI 1.15 > 1
+   ```
+
+6. Stress-test the recommendation: raise the discount rate in your formulas to 14% and observe NPV turn slightly negative — the project's IRR is ≈13.4%, so the accept decision holds only while the cost of capital stays below that. Note this sensitivity in one line.
+
+   ```
+   At i = 14%: PV inflows ≈ 1,956 → NPV ≈ -44 → reject
+   ```
+
 
 **Test it**
 
-Your worksheet shows NPV ≈ $304 and PI ≈ 1.15, and your decision is ACCEPT because NPV > 0 and PI > 1.
+Your worksheet shows NPV ≈ S$304k and PI ≈ 1.15 with an ACCEPT decision, plus a one-line sensitivity note (NPV turns negative near a 13–14% discount rate).
 
-> **Note:** The full worksheet for this activity is available on the LMS, and a printable copy is in activities/activity-05 of the course repository.
+> **Note:** Everything for this activity lives in activities/activity05/ of the course repository (and in the Activities folder on the LMS): this guide, the Excel data workbook and the raw data as CSV files.
 
 ---
 
@@ -418,46 +476,52 @@ Your worksheet shows NPV ≈ $304 and PI ≈ 1.15, and your decision is ACCEPT b
 
 Maps to: LO3 — compare companies' solvency risk from their statements (K5, A2).
 
-Goal: Using the balance sheets and income statements of companies X and Y, compare the two companies in terms of solvency risk: debt-to-equity, financial leverage and interest coverage. Conclude which company is the riskier borrower.
+Goal: Return to Orchid Logistics (Company X) and Marina Retail Group (Company Y). Using their balance sheets and income statements, compare the two companies' solvency risk — debt-to-equity, financial leverage and interest coverage — and conclude which is the riskier borrower.
 
 **What you'll produce**
 
-A solvency comparison table (D/E, leverage, interest coverage) for X and Y with a risk verdict.   (Tools: Microsoft Excel (or Google Sheets), activity worksheet from the LMS.)
+A solvency comparison table (D/E, leverage, interest coverage) for X and Y with a reasoned risk verdict.   (Tools: Microsoft Excel · data workbook FA-Activity-06-Solvency-Analysis.xlsx in activities/activity06.)
 
 **Data provided**
 
-- Balance Sheet (X | Y): Total Assets 650,000 | 900,000 · LT Debt 300,000 | 500,000 · Equity 170,000 | 180,000
+- Workbook: FA-Activity-06-Solvency-Analysis.xlsx — same X/Y statements as Activity 2 ('Balance Sheet' and 'Income Statement', X in column B, Y in column C) plus a solvency 'Your Workings' template
+- Balance Sheet (X | Y): Total assets 650,000 | 900,000 · LT liabilities 300,000 | 500,000 · Capital 170,000 | 180,000
 - Income Statement (X | Y): EBIT 100,000 | 228,000 · Interest 10,000 | 18,000
 
 **Step-by-step**
 
-1. Download the activity worksheet 'Solvency Analysis' from the LMS and open it in Excel.
-2. Compute Debt-to-Equity = Long-Term Debt / Equity. X: 300,000/170,000 = 1.76; Y: 500,000/180,000 = 2.78.
+1. Open FA-Activity-06-Solvency-Analysis.xlsx. Solvency looks at the LONG-term survival of the capital structure, so pull three ingredients per company from the 'Balance Sheet' sheet: long-term liabilities (row 17), capital (row 18) and total assets (row 13); and two from the 'Income Statement': EBIT (row 12) and interest (row 13).
+2. Compute Debt-to-Equity = Long-Term Liabilities / Equity for both companies — how many dollars of long-term debt sit on each dollar the owners have at stake.
 
    ```
-   X 1.76 · Y 2.78
+   X: 300,000/170,000 = 1.76 · Y: 500,000/180,000 = 2.78
    ```
 
-3. Compute Financial Leverage = Total Assets / Equity. X: 650,000/170,000 = 3.82; Y: 900,000/180,000 = 5.00.
+3. Compute Financial Leverage = Total Assets / Equity — the equity multiplier. At 5.00, only a fifth of Y's balance sheet is owner-funded.
 
    ```
-   X 3.82 · Y 5.00
+   X: 650,000/170,000 = 3.82 · Y: 900,000/180,000 = 5.00
    ```
 
-4. Compute Interest Coverage = EBIT / Interest Expense. X: 100,000/10,000 = 10.0; Y: 228,000/18,000 = 12.7.
+4. Compute Interest Coverage = EBIT / Interest Expense — how many times operating profit covers the interest bill this year.
 
    ```
-   X 10.0 · Y 12.7
+   X: 100,000/10,000 = 10.0× · Y: 228,000/18,000 = 12.7×
    ```
 
-5. Weigh the evidence: Y carries more debt per dollar of equity and higher leverage, but also earns more cover for its interest bill.
-6. Write the verdict: Y has the higher structural solvency risk (D/E 2.78, leverage 5.00) even though its interest coverage is currently stronger.
+5. Weigh the evidence like a credit officer: Y carries structurally more debt per dollar of equity (D/E 2.78, leverage 5.00) but currently earns stronger cover (12.7×). Ask the trend question: what happens to Y's cover if EBIT halves in a downturn? X: 5.0× — comfortable; Y: 6.3× but on a far bigger debt load that must be refinanced.
+
+   ```
+   Stress: halve EBIT → X 5.0× · Y 6.3×, with 500,000 of LT debt to refinance
+   ```
+
+6. Write the verdict on 'Your Workings': Company Y has the higher structural solvency risk — its capital structure depends on lenders — even though its current interest coverage is stronger. Recommend the leverage and coverage covenants you would monitor.
 
 **Test it**
 
-Your table matches the model answers (D/E 1.76 vs 2.78; leverage 3.82 vs 5.00; coverage 10.0 vs 12.7) and your verdict identifies Company Y as the riskier capital structure.
+Your table matches the model answers (D/E 1.76 vs 2.78; leverage 3.82 vs 5.00; coverage 10.0× vs 12.7×) and your verdict identifies Company Y's capital structure as the riskier one, with reasons.
 
-> **Note:** The full worksheet for this activity is available on the LMS, and a printable copy is in activities/activity-06 of the course repository.
+> **Note:** Everything for this activity lives in activities/activity06/ of the course repository (and in the Activities folder on the LMS): this guide, the Excel data workbook and the raw data as CSV files.
 
 ---
 

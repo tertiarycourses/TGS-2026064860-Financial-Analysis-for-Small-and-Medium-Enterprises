@@ -52,25 +52,25 @@ SCHEDULE = {
     ("9:30","10:30",60,"topic","Topic 1 — Understanding Financial Statements: significance of finance, the financial system, accounting objectives and types, accounting cycle, chart of accounts, single vs double entry"+sl("topic1")),
     ("10:30","10:45",15,"break","Tea break"),
     ("10:45","12:15",90,"topic","Topic 1 (continued) — Balance sheet: assets, liabilities, equity, depreciation methods, working capital; Income statement: revenue to net income, EBITDA, cash vs accrual; Cash flow statement: operating, investing, financing"),
-    ("12:15","13:00",45,"lab","Hands-on: "+act_title(1)+sl("activity1")),
+    ("12:15","13:00",45,"activity","Hands-on: "+act_title(1)+sl("activity1")),
     ("13:00","14:00",60,"lunch","Lunch break"),
     ("14:00","15:30",90,"topic","Digital attendance (PM). Topic 2 — Analysing Financial Ratios: ratio analysis, liquidity ratios, leverage ratios and their interpretation"+sl("topic2")),
     ("15:30","15:45",15,"break","Tea break"),
     ("15:45","16:45",60,"topic","Topic 2 (continued) — Efficiency ratios, profitability ratios, EPS, statement of changes in equity, summary of all ratios"),
-    ("16:45","17:30",45,"lab","Hands-on: "+act_title(2)+sl("activity2")),
-    ("17:30","18:00",30,"lab","Hands-on: "+act_title(3)+sl("activity3")+". Day 1 recap and Q&A"),
+    ("16:45","17:30",45,"activity","Hands-on: "+act_title(2)+sl("activity2")),
+    ("17:30","18:00",30,"activity","Hands-on: "+act_title(3)+sl("activity3")+". Day 1 recap and Q&A"),
  ]),
  2: (C.DAY_THEMES[2], [
     ("9:00","9:15",15,"recap","Day 1 recap and mandatory digital attendance (AM)"),
     ("9:15","10:30",75,"topic","Topic 3 — Planning & Budgeting using Financial Statements: budgets, budgeting methods, objectives, budgeting process, capital budgeting and time value of money"+sl("topic3")),
     ("10:30","10:45",15,"break","Tea break"),
-    ("10:45","11:30",45,"lab","Hands-on: "+act_title(4)+sl("activity4")),
-    ("11:30","12:15",45,"lab","Hands-on: "+act_title(5)+sl("activity5")),
+    ("10:45","11:30",45,"activity","Hands-on: "+act_title(4)+sl("activity4")),
+    ("11:30","12:15",45,"activity","Hands-on: "+act_title(5)+sl("activity5")),
     ("12:15","13:00",45,"topic","Topic 3 (continued) — Cash flow analysis, pro forma statements, budget vs forecast, variances, business risk"),
     ("13:00","14:00",60,"lunch","Lunch break"),
     ("14:00","15:00",60,"topic","Digital attendance (PM). Topic 3 (continued) — Financial health of a company, investment suitability, industry ratios, benchmarking, horizontal and vertical analysis"),
-    ("15:00","15:45",45,"lab","Hands-on: "+act_title(6)+sl("activity6")),
-    ("15:45","16:00",15,"assess","Revision and course summary"+(f" (Slides {IDX['wrapup']}–{IDX['total']})" if IDX else "")+", course feedback and TRAQOM survey; Briefing for Assessment (Slide 13)"),
+    ("15:00","15:45",45,"activity","Hands-on: "+act_title(6)+sl("activity6")),
+    ("15:45","16:00",15,"assess","Revision and course summary"+(f" (Slides {IDX['wrapup']}–{IDX['total']})" if IDX else "")+", course feedback and TRAQOM survey; Briefing for Assessment (Slide 14)"),
     ("16:00","17:00",60,"assess","Digital attendance (Assessment). Written Assessment (WA) — Short-Answer Questions (SAQ), 1 hour, open book"),
     ("17:00","18:00",60,"assess","Practical Performance (PP) — financial-analysis tasks, 1 hour, open book. End of class"),
  ]),
@@ -86,8 +86,10 @@ prodoc.add_cover_page(doc,"LESSON PLAN",C.TITLE,C.VERSION.lstrip("v"),
                       course_logo=None, course_code=C.COURSE_CODE)
 prodoc.add_version_control(doc,[
  ("10.0","1 June 2026","Legacy lesson plan aligned to the v10 master trainer slides.","Han Leong"),
- (C.VERSION.lstrip("v"),C.VERSION_DATE,
+ ("11.0","10 August 2026",
   "Full redesign: regenerated from the single-source content pipeline; slide references aligned to the v11 visual deck; six hands-on activities scheduled across the two days.",C.TRAINER),
+ (C.VERSION.lstrip("v"),C.VERSION_DATE,
+  "Added realistic mock-data Excel/CSV workbooks for every activity (activities/activity01-06); slide references aligned to the v12 deck.",C.TRAINER),
 ])
 prodoc.add_toc(doc)
 
@@ -127,7 +129,7 @@ def set_cell(cell,text,bold=False,size=9.5,color=None,fill=None,align=None):
     if fill: prodoc._shade_cell(cell,fill)
 
 KIND_FILL={"topic":TOPIC_FILL,"break":BREAK_FILL,"lunch":LUNCH_FILL,"assess":ASSESS_FILL,
-           "admin":"F3F5F8","recap":"F3F5F8","lab":None}
+           "admin":"F3F5F8","recap":"F3F5F8","activity":None}
 
 H("Course Schedule",1)
 for day,(theme,rows) in SCHEDULE.items():
