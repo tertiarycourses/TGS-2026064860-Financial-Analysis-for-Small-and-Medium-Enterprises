@@ -10,7 +10,7 @@ file + data_domain1..3.py so they stay 100% aligned.
 TITLE        = "Financial Analysis for Small and Medium Enterprises"
 SHORT_TITLE  = "Financial Analysis for Small and Medium Enterprises"
 COURSE_CODE  = "TGS-2026064860"
-VERSION      = "v12"
+VERSION      = "v13"
 VERSION_DATE = "11 August 2026"
 ORG          = "Tertiary Infotech Academy Pte Ltd"
 UEN          = "UEN: 201200696W"

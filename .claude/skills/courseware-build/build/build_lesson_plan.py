@@ -88,8 +88,10 @@ prodoc.add_version_control(doc,[
  ("10.0","1 June 2026","Legacy lesson plan aligned to the v10 master trainer slides.","Han Leong"),
  ("11.0","10 August 2026",
   "Full redesign: regenerated from the single-source content pipeline; slide references aligned to the v11 visual deck; six hands-on activities scheduled across the two days.",C.TRAINER),
- (C.VERSION.lstrip("v"),C.VERSION_DATE,
+ ("12.0","11 August 2026",
   "Added realistic mock-data Excel/CSV workbooks for every activity (activities/activity01-06); slide references aligned to the v12 deck.",C.TRAINER),
+ (C.VERSION.lstrip("v")+".0",C.VERSION_DATE,
+  "Consolidated every activity file into its own activity folder (workbook, CSV data and printable worksheet together); slide references aligned to the v13 deck.",C.TRAINER),
 ])
 prodoc.add_toc(doc)
 

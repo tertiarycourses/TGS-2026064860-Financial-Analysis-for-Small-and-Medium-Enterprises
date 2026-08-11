@@ -62,7 +62,7 @@ h3("What you need")
 bullets([
  "A laptop with Microsoft Excel (2016 or later) or a Google account for Google Sheets.",
  "Access to the course LMS at https://lms-tms.tertiaryinfotech.com — log in with your registered email (an OTP is sent to you).",
- "The mock-data workbooks: each activity has its own folder (activities/activity01 … activity06, also in the Activities folder on the LMS) holding the activity guide (.md), a formatted Excel workbook (.xlsx) and the raw data as .csv files.",
+ "The activity data: each activity has its own self-contained folder (activities/activity01 … activity06, mirrored in the Activities folder on the LMS) holding the activity guide (.md), a formatted mock-data Excel workbook (.xlsx), the raw data as .csv files and a printable worksheet (.pdf).",
  "All company data is fictitious and prepared for training use only.",
  "A calculator (or the spreadsheet itself) for the ratio and discounting computations.",
 ])
@@ -92,9 +92,9 @@ for t in C.TOPICS:
         steps(list(a["steps"]))
         h3("Test it")
         p(a["test"])
-        note(f"Everything for this activity lives in activities/activity{a['num']:02d}/ of the course "
-             f"repository (and in the Activities folder on the LMS): this guide, the Excel data workbook "
-             f"and the raw data as CSV files.")
+        note(f"Everything for this activity lives in one folder — activities/activity{a['num']:02d}/ of the "
+             f"course repository, and the matching folder in the Activities folder on the LMS: this guide, "
+             f"the mock-data Excel workbook, the raw data as CSV files, and a printable worksheet PDF.")
         rule()
 
 h1("Revision Pointers for the Final Assessment")
@@ -176,8 +176,12 @@ def slug(t):
     s=re.sub(r"[^a-z0-9]+","-",t.lower()).strip("-")
     return s
 index_lines=[f"# Activities — {C.TITLE} ({C.COURSE_CODE})","",
-             "One folder per hands-on activity: the step-by-step guide (.md), the mock-data Excel workbook "
-             "(.xlsx) and the raw data as .csv files. The same steps, with full workings, are in the Learner Guide.",""]
+             "One self-contained folder per hands-on activity — every file for an activity lives in its own "
+             "folder: the step-by-step guide (.md), the mock-data Excel workbook (.xlsx), the raw data as "
+             ".csv files and a printable worksheet (.pdf). The same steps, with full workings, are in the "
+             "Learner Guide.","",
+             "| Activity | Folder | Company / data set |",
+             "|---|---|---|"]
 for a in ACT:
     sub=os.path.join(ACT_DIR,f"activity{a['num']:02d}")
     os.makedirs(sub,exist_ok=True)
@@ -194,13 +198,20 @@ for a in ACT:
     for i,(instr,work) in enumerate(a["steps"],1):
         lines.append(f"{i}. {instr}")
         if work: lines+=["","   ```",f"   {work}","   ```",""]
-    data_files=sorted(x for x in os.listdir(sub) if x.endswith((".xlsx",".csv")))
+    data_files=sorted(x for x in os.listdir(sub)
+                      if x.endswith((".xlsx",".csv",".pdf")) and "-answer" not in x)
     if data_files:
-        lines+=["","## Data files in this folder",""]
-        lines+=[f"- `{x}`" for x in data_files]
+        lines+=["","## Files in this folder",""]
+        for x in data_files:
+            kind=("mock-data workbook (Excel)" if x.endswith(".xlsx")
+                  else "raw data (CSV)" if x.endswith(".csv")
+                  else "printable worksheet (PDF)")
+            lines+=[f"- `{x}` — {kind}"]
+        lines+=["","> The model-answer PDF (`*-worksheet-answer.pdf`) in this folder is trainer material.",""]
     lines+=["","## Test it","",a["test"],""]
     with open(os.path.join(sub,fn),"w") as f: f.write("\n".join(lines))
-    index_lines.append(f"- [Activity {a['num']} — {a['title']}](activity{a['num']:02d}/{fn})")
+    company=a.get("company","—")
+    index_lines.append(f"| [{a['num']}. {a['title']}](activity{a['num']:02d}/{fn}) | `activity{a['num']:02d}/` | {company} |")
 with open(os.path.join(ACT_DIR,"README.md"),"w") as f: f.write("\n".join(index_lines)+"\n")
 print("Saved",len(ACT),"activity files +",os.path.join(ACT_DIR,"README.md"))
 
@@ -217,8 +228,10 @@ prodoc.add_version_control(doc,[
  ("10.0","1 June 2026","Legacy learner guide aligned to the v10 master trainer slides.","Han Leong"),
  ("11.0","10 August 2026",
   "Full redesign: regenerated from the single-source content pipeline with six step-by-step hands-on activities (cash flow statement, ratio analysis, trend analysis, payback, NPV/PI, solvency), revision pointers and a glossary.",C.TRAINER),
- (C.VERSION.lstrip("v"),C.VERSION_DATE,
+ ("12.0","11 August 2026",
   "Added realistic mock-data workbooks (Excel + CSV, one folder per activity with named fictitious SMEs) and rewrote every activity as a detailed data-analysis walkthrough: exact sheets, cell formulas, expected values and interpretation at each step.",C.TRAINER),
+ (C.VERSION.lstrip("v")+".0",C.VERSION_DATE,
+  "Consolidated every activity file into one self-contained folder per activity — guide, mock-data workbook, CSV data and printable worksheet — and added a folder/data-set index to the activities README.",C.TRAINER),
 ])
 prodoc.add_toc(doc)
 

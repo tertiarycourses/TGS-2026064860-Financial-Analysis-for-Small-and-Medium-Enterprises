@@ -1,6 +1,6 @@
 # Financial Analysis for Small and Medium Enterprises — Learner Guide
 
-**WSQ Course Code:** TGS-2026064860  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v12 · 11 August 2026**
+**WSQ Course Code:** TGS-2026064860  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v13 · 11 August 2026**
 
 ## Contents
 
@@ -54,7 +54,7 @@ TSC Title: Financial Analysis · TSC Code: ACC-MAC-5004-1.1
 
 - A laptop with Microsoft Excel (2016 or later) or a Google account for Google Sheets.
 - Access to the course LMS at https://lms-tms.tertiaryinfotech.com — log in with your registered email (an OTP is sent to you).
-- The mock-data workbooks: each activity has its own folder (activities/activity01 … activity06, also in the Activities folder on the LMS) holding the activity guide (.md), a formatted Excel workbook (.xlsx) and the raw data as .csv files.
+- The activity data: each activity has its own self-contained folder (activities/activity01 … activity06, mirrored in the Activities folder on the LMS) holding the activity guide (.md), a formatted mock-data Excel workbook (.xlsx), the raw data as .csv files and a printable worksheet (.pdf).
 - All company data is fictitious and prepared for training use only.
 - A calculator (or the spreadsheet itself) for the ratio and discounting computations.
 
@@ -153,7 +153,7 @@ A complete statement of cash flows (operating / investing / financing) for Haven
 
 Your three blocks total +18 (operating), −14 (investing) and −14 (financing), net −10 — matching the model answer — and you can explain in one sentence why a profitable year still drained cash.
 
-> **Note:** Everything for this activity lives in activities/activity01/ of the course repository (and in the Activities folder on the LMS): this guide, the Excel data workbook and the raw data as CSV files.
+> **Note:** Everything for this activity lives in one folder — activities/activity01/ of the course repository, and the matching folder in the Activities folder on the LMS: this guide, the mock-data Excel workbook, the raw data as CSV files, and a printable worksheet PDF.
 
 ---
 
@@ -260,7 +260,7 @@ Leverage — X: 650,000/170,000 = 3.82 · Y: 900,000/180,000 = 5.00
 
 Your worksheet shows all ten ratios for both companies matching the model answers (e.g. Current Ratio X 1.06 vs Y 1.82; D/E X 1.76 vs Y 2.78), with a one-line verdict per ratio family.
 
-> **Note:** Everything for this activity lives in activities/activity02/ of the course repository (and in the Activities folder on the LMS): this guide, the Excel data workbook and the raw data as CSV files.
+> **Note:** Everything for this activity lives in one folder — activities/activity02/ of the course repository, and the matching folder in the Activities folder on the LMS: this guide, the mock-data Excel workbook, the raw data as CSV files, and a printable worksheet PDF.
 
 ---
 
@@ -335,7 +335,7 @@ Receivables: 3.00 → 3.29 · Payables: 0.99 → 0.73
 
 Your ratio table matches the model answers (e.g. FY2021 Current Ratio 1.64, Net Profit Margin 0.38, D/E 0.75) and your observations cover profitability, efficiency, liquidity and leverage.
 
-> **Note:** Everything for this activity lives in activities/activity03/ of the course repository (and in the Activities folder on the LMS): this guide, the Excel data workbook and the raw data as CSV files.
+> **Note:** Everything for this activity lives in one folder — activities/activity03/ of the course repository, and the matching folder in the Activities folder on the LMS: this guide, the mock-data Excel workbook, the raw data as CSV files, and a printable worksheet PDF.
 
 ---
 
@@ -403,7 +403,7 @@ A payback worksheet showing cumulative cash flow per year, the simple payback po
 
 Your cumulative discounted cash flow reaches S$2,000.60k at Year 8 — the discounted payback (≈8 years) is materially longer than the simple payback (5.33 years), and you can say why.
 
-> **Note:** Everything for this activity lives in activities/activity04/ of the course repository (and in the Activities folder on the LMS): this guide, the Excel data workbook and the raw data as CSV files.
+> **Note:** Everything for this activity lives in one folder — activities/activity04/ of the course repository, and the matching folder in the Activities folder on the LMS: this guide, the mock-data Excel workbook, the raw data as CSV files, and a printable worksheet PDF.
 
 ---
 
@@ -467,7 +467,7 @@ An NPV/PI worksheet: PV of each inflow, NPV ≈ S$304k, PI ≈ 1.15, and a reaso
 
 Your worksheet shows NPV ≈ S$304k and PI ≈ 1.15 with an ACCEPT decision, plus a one-line sensitivity note (NPV turns negative near a 13–14% discount rate).
 
-> **Note:** Everything for this activity lives in activities/activity05/ of the course repository (and in the Activities folder on the LMS): this guide, the Excel data workbook and the raw data as CSV files.
+> **Note:** Everything for this activity lives in one folder — activities/activity05/ of the course repository, and the matching folder in the Activities folder on the LMS: this guide, the mock-data Excel workbook, the raw data as CSV files, and a printable worksheet PDF.
 
 ---
 
@@ -521,7 +521,7 @@ A solvency comparison table (D/E, leverage, interest coverage) for X and Y with 
 
 Your table matches the model answers (D/E 1.76 vs 2.78; leverage 3.82 vs 5.00; coverage 10.0× vs 12.7×) and your verdict identifies Company Y's capital structure as the riskier one, with reasons.
 
-> **Note:** Everything for this activity lives in activities/activity06/ of the course repository (and in the Activities folder on the LMS): this guide, the Excel data workbook and the raw data as CSV files.
+> **Note:** Everything for this activity lives in one folder — activities/activity06/ of the course repository, and the matching folder in the Activities folder on the LMS: this guide, the mock-data Excel workbook, the raw data as CSV files, and a printable worksheet PDF.
 
 ---
 

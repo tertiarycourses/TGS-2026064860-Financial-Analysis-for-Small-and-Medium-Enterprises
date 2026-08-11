@@ -5,6 +5,7 @@ DOMAIN3 = [
         num=4,
         topic=3,
         title="Payback Period & Discounted Payback Period",
+        company="Havenwood Trading — delivery-van proposal",
         objective="LO3 — evaluate a capital investment using payback methods (K5, A2)",
         desc="Havenwood Trading is evaluating a refrigerated delivery van: S$2,000k outlay in Year 0, saving "
              "S$375k per year for 10 years versus outsourced cold-chain delivery. Compute the simple payback "
@@ -43,6 +44,7 @@ DOMAIN3 = [
         num=5,
         topic=3,
         title="Net Present Value & Profitability Index",
+        company="Havenwood Trading — delivery-van proposal",
         objective="LO3 — evaluate a capital investment using NPV and PI (K5, A2)",
         desc="Using the same delivery-van proposal (S$2,000k outlay, S$375k/year for 10 years, 10% required "
              "return), compute the Net Present Value and the Profitability Index, and make the accept/reject "
@@ -77,6 +79,7 @@ DOMAIN3 = [
         num=6,
         topic=3,
         title="Solvency & Financial Risk Analysis",
+        company="Orchid Logistics (X) vs Marina Retail Group (Y)",
         objective="LO3 — compare companies' solvency risk from their statements (K5, A2)",
         desc="Return to Orchid Logistics (Company X) and Marina Retail Group (Company Y). Using their balance "
              "sheets and income statements, compare the two companies' solvency risk — debt-to-equity, "

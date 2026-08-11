@@ -67,11 +67,15 @@
 
 10. Cross-check the story against the three statements: profit was +10 yet cash moved −10 — point to the capex (−15 gross) and loan repayment (−5) as the difference between profit and cash. This is the K3 insight the assessment asks for.
 
-## Data files in this folder
+## Files in this folder
 
-- `FA-Activity-01-Cash-Flow-Statement.xlsx`
-- `balance_sheet.csv`
-- `income_statement.csv`
+- `FA-Activity-01-Cash-Flow-Statement.xlsx` — mock-data workbook (Excel)
+- `activity-01-worksheet-question.pdf` — printable worksheet (PDF)
+- `balance_sheet.csv` — raw data (CSV)
+- `income_statement.csv` — raw data (CSV)
+
+> The model-answer PDF (`*-worksheet-answer.pdf`) in this folder is trainer material.
+
 
 ## Test it
 

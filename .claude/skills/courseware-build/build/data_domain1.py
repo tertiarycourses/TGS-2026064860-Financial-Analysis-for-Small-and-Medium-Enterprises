@@ -11,6 +11,7 @@ DOMAIN1 = [
         num=1,
         topic=1,
         title="Prepare a Cash Flow Statement",
+        company="Havenwood Trading Pte Ltd (S$ million)",
         objective="LO1 — understand the balance sheet, income and cash flow statements (K1, K2, K3)",
         desc="Havenwood Trading Pte Ltd is a fictitious Singapore SME distributor. From its FY2018/FY2019 "
              "balance sheets and FY2019 income statement (all in S$ million), derive the full statement of "

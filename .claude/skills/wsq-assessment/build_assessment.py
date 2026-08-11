@@ -62,7 +62,7 @@ def _logo(name):
 ORG_LOGO    = _logo("tertiary-infotech-logo.png")
 COURSE_LOGO = None   # Tertiary-only cover (as LP/LG)
 
-Q_VER, A_VER = "v5", "v5"   # v4 + mock-data workbook (Company A and B, 3 years)
+Q_VER, A_VER = "v6", "v6"   # v5 + activity-folder references
 BRAND = RGBColor(0x1F, 0x6F, 0xEB); DARK = RGBColor(0x11, 0x18, 0x27); GREY = RGBColor(0x55, 0x5B, 0x66)
 # Assessments carry the cover page only — no Document Version Control Record.
 
@@ -162,7 +162,8 @@ PRACTICAL = [
   "Debt-to-Equity Ratio, or others. Identify trends in these ratios and discuss how they reflect the "
   "financial health and risk associated with each company. Based on these trends, recommend which company "
   "your client should consider investing in and justify your decision. "
-  "(Mirrors Activity 2 — Ratio Analysis of Two Companies and Activity 3 — Trend Analysis.)",
+  "(Mirrors Activity 2 — Ratio Analysis of Two Companies, and Activity 3 — Trend Analysis; see "
+  "activities/activity02 and activities/activity03.)",
   BOX_CAP,
   "Procedure (as practised in Activities 2 and 3):\n"
   "1. Lay out both companies' statements side by side in Excel, one column per year.\n"
@@ -174,8 +175,8 @@ PRACTICAL = [
   "5. Identify the trends: improving margins/returns and stable liquidity favour investment; a rising\n"
   "   debt-to-equity or falling current ratio signals rising risk.\n"
   "6. Recommend the company with the stronger and more sustainable trend and justify with the ratios.\n"
-  "   (Worked illustration from class: ROE, ROA and net profit margin are computed for both companies and\n"
-  "   compared — the company that performs better on all the required metrics is the better choice.)"),
+  "   (Worked in class: compare ROE, ROA and net profit margin for both companies; the better\n"
+  "   performer on all required metrics is the better investment.)"),
  ("Task 2", "A2",
   "Using Company A's Year 3 financial statements in the data workbook provided, calculate the DuPont analysis to break down Return "
   "on Equity (ROE) into its components: Net Profit Margin, Asset Turnover, and Equity Multiplier. Interpret "
@@ -183,7 +184,8 @@ PRACTICAL = [
   "Based on your analysis, explain whether Company A's financial position and performance indicate a strong "
   "potential for future growth. Provide a recommendation to your client on whether to proceed with the "
   "investment, with a focus on how the DuPont analysis supports your conclusion. "
-  "(DuPont index — Topic 3, Financial Analysis for Investment Suitability; builds on Activity 2.)",
+  "(DuPont index — Topic 3, Financial Analysis for Investment Suitability; builds on Activity 2, "
+  "activities/activity02.)",
   BOX_CAP,
   "DuPont decomposition: ROE = Net Profit Margin x Asset Turnover x Equity Multiplier.\n"
   "  - Operating efficiency  -> Net Profit Margin = Net Income / Sales (net income per dollar of sales).\n"

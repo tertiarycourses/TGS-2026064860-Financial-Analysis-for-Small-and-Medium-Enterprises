@@ -199,7 +199,7 @@ def trainer_slide(kicker,name,role,rows,initials,accent=BLUE):
         txt(s,rx+Inches(0.32),y,rw-Inches(0.6),th,
             [[(label.upper(),11,col,True)],vruns],anchor=MSO_ANCHOR.MIDDLE,space=3)
     footer(s); return s
-def activity_overview(tag,title,desc,build,services,kicker):
+def activity_overview(tag,title,desc,build,services,kicker,folder=""):
     s=head(slide(),title,kicker,kcolor=TEAL)
     rect(s,Inches(0.85),Inches(1.85),Inches(2.2),Inches(0.5),TEAL)
     txt(s,Inches(0.85),Inches(1.9),Inches(2.2),Inches(0.4),[[(tag,16,WHITE,True)]],align=PP_ALIGN.CENTER)
@@ -208,7 +208,7 @@ def activity_overview(tag,title,desc,build,services,kicker):
     txt(s,Inches(1.1),Inches(4.55),Inches(11),Inches(0.4),[[("You'll produce",14,BLUE,True)]])
     txt(s,Inches(1.1),Inches(4.95),Inches(11.2),Inches(0.8),[[(build,17,INK,True)]])
     txt(s,Inches(1.1),Inches(5.75),Inches(11.2),Inches(0.5),[[("Tools:  ",13,GREY,True),(services,13,GREY,False)],
-        [("Detailed step-by-step: see this activity in the Learner Guide.",12,TEAL,True)]],space=3)
+        [(folder,12,BLUE,True),("   ·   Detailed step-by-step: see this activity in the Learner Guide.",12,TEAL,True)]],space=3)
     footer(s); return s
 def img_slide(title,img,kicker=None,caption="",h=Inches(4.75),accent=BLUE):
     """Full-width content image under the standard header."""
@@ -559,7 +559,7 @@ img_slide("Cash Flow Statement — Example","cash-flow-statement-example.png",ki
  caption="Operating, investing and financing blocks reconcile the opening cash balance to the closing balance.")
 A=ACTIVITIES[0]
 mark("activity1")
-activity_overview("ACTIVITY 1",A["title"],A["desc"],A["build"],A["services"],kicker="TOPIC 01 · HANDS-ON")
+activity_overview("ACTIVITY 1",A["title"],A["desc"],A["build"],A["services"],kicker="TOPIC 01 · HANDS-ON",folder="All files: activities/activity01/")
 content(f"Recap — {T['title']}",[
  "The chart of accounts and double-entry rules keep the books in balance.",
  "The balance sheet shows position: Assets = Liabilities + Equity.",
@@ -685,10 +685,10 @@ two_col("Summary of All Ratios",[
  kicker="ONE-PAGE CHEAT SHEET",lhead="Liquidity & Leverage",rhead="Efficiency & Profitability")
 A=ACTIVITIES[1]
 mark("activity2")
-activity_overview("ACTIVITY 2",A["title"],A["desc"],A["build"],A["services"],kicker="TOPIC 02 · HANDS-ON")
+activity_overview("ACTIVITY 2",A["title"],A["desc"],A["build"],A["services"],kicker="TOPIC 02 · HANDS-ON",folder="All files: activities/activity02/")
 A=ACTIVITIES[2]
 mark("activity3")
-activity_overview("ACTIVITY 3",A["title"],A["desc"],A["build"],A["services"],kicker="TOPIC 02 · HANDS-ON")
+activity_overview("ACTIVITY 3",A["title"],A["desc"],A["build"],A["services"],kicker="TOPIC 02 · HANDS-ON",folder="All files: activities/activity03/")
 content(f"Recap — {T['title']}",[
  "Liquidity, leverage, efficiency and profitability — the four ratio families.",
  "Every ratio needs a benchmark: industry, competitor or the company's own trend.",
@@ -778,10 +778,10 @@ img_text_slide("Profitability Index — Worked Example","profitability-index-exa
  kicker="PI > 1 → ACCEPT",size=15)
 A=ACTIVITIES[3]
 mark("activity4")
-activity_overview("ACTIVITY 4",A["title"],A["desc"],A["build"],A["services"],kicker="TOPIC 03 · HANDS-ON")
+activity_overview("ACTIVITY 4",A["title"],A["desc"],A["build"],A["services"],kicker="TOPIC 03 · HANDS-ON",folder="All files: activities/activity04/")
 A=ACTIVITIES[4]
 mark("activity5")
-activity_overview("ACTIVITY 5",A["title"],A["desc"],A["build"],A["services"],kicker="TOPIC 03 · HANDS-ON")
+activity_overview("ACTIVITY 5",A["title"],A["desc"],A["build"],A["services"],kicker="TOPIC 03 · HANDS-ON",folder="All files: activities/activity05/")
 
 img_text_slide("Cash Flow Analysis & Management","monthly-cash-flow.png",
  [("Track the monthly statement of cash flows.",0),
@@ -871,7 +871,7 @@ img_slide("Vertical Analysis — Example","vertical-analysis-example.png",kicker
  caption="Income-statement items expressed as a percentage of sales for three years.")
 A=ACTIVITIES[5]
 mark("activity6")
-activity_overview("ACTIVITY 6",A["title"],A["desc"],A["build"],A["services"],kicker="TOPIC 03 · HANDS-ON")
+activity_overview("ACTIVITY 6",A["title"],A["desc"],A["build"],A["services"],kicker="TOPIC 03 · HANDS-ON",folder="All files: activities/activity06/")
 content(f"Recap — {T['title']}",[
  "Budgets plan the spending; forecasts predict the outcome; variances close the loop.",
  "Capital budgeting decisions: payback, discounted payback, NPV, PI and IRR.",

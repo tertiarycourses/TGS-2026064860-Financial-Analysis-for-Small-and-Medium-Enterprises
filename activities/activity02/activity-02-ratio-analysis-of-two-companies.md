@@ -82,11 +82,15 @@ Leverage — X: 650,000/170,000 = 3.82 · Y: 900,000/180,000 = 5.00
 
 11. Write the verdicts in the 'Your Workings' sheet, one line per family: Y wins on liquidity and profitability; X wins on turnover efficiency and carries materially less solvency risk. Note how Y's higher ROE partly comes from leverage, not just operations — the DuPont insight.
 
-## Data files in this folder
+## Files in this folder
 
-- `FA-Activity-02-Ratio-Analysis.xlsx`
-- `balance_sheet_x_y.csv`
-- `income_statement_x_y.csv`
+- `FA-Activity-02-Ratio-Analysis.xlsx` — mock-data workbook (Excel)
+- `activity-02-worksheet-question.pdf` — printable worksheet (PDF)
+- `balance_sheet_x_y.csv` — raw data (CSV)
+- `income_statement_x_y.csv` — raw data (CSV)
+
+> The model-answer PDF (`*-worksheet-answer.pdf`) in this folder is trainer material.
+
 
 ## Test it
 

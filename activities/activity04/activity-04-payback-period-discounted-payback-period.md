@@ -43,10 +43,14 @@
 
 6. Interpret the gap on the 'Your Workings' sheet: discounting stretches the payback from 5.33 to ≈8 years because later savings are worth less today. State when payback is the right tool (quick liquidity screen) and its blind spots (ignores cash flows AFTER payback, and simple payback ignores the time value of money).
 
-## Data files in this folder
+## Files in this folder
 
-- `FA-Activity-04-Payback-Period.xlsx`
-- `project_cash_flows.csv`
+- `FA-Activity-04-Payback-Period.xlsx` — mock-data workbook (Excel)
+- `activity-04-worksheet-question.pdf` — printable worksheet (PDF)
+- `project_cash_flows.csv` — raw data (CSV)
+
+> The model-answer PDF (`*-worksheet-answer.pdf`) in this folder is trainer material.
+
 
 ## Test it
 

@@ -5,6 +5,7 @@ DOMAIN2 = [
         num=2,
         topic=2,
         title="Ratio Analysis of Two Companies",
+        company="Orchid Logistics (X) vs Marina Retail Group (Y)",
         objective="LO2 — evaluate financial performance from financial ratios (K4, A1)",
         desc="Orchid Logistics Pte Ltd (Company X) and Marina Retail Group Pte Ltd (Company Y) are two "
              "fictitious SMEs. From their FY2025 balance sheets and income statements, compute the liquidity, "
@@ -56,6 +57,7 @@ DOMAIN2 = [
         num=3,
         topic=2,
         title="Trend Analysis over Four Years",
+        company="Sunrise F&B Holdings Pte Ltd (FY2018–FY2021)",
         objective="LO2 — identify trends by comparing ratios across time periods (K5, A1)",
         desc="Sunrise F&B Holdings Pte Ltd is a fictitious cafe-chain SME. From four years (FY2018–FY2021) of "
              "balance sheets and income statements, compute year-on-year growth for every line, derive the key "

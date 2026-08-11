@@ -53,10 +53,14 @@
    ```
 
 
-## Data files in this folder
+## Files in this folder
 
-- `FA-Activity-05-NPV-PI.xlsx`
-- `project_cash_flows.csv`
+- `FA-Activity-05-NPV-PI.xlsx` — mock-data workbook (Excel)
+- `activity-05-worksheet-question.pdf` — printable worksheet (PDF)
+- `project_cash_flows.csv` — raw data (CSV)
+
+> The model-answer PDF (`*-worksheet-answer.pdf`) in this folder is trainer material.
+
 
 ## Test it
 

@@ -34,17 +34,22 @@ and capital-budgeting techniques to real numbers in Excel.
 
 ```
 ├── courseware/
-│   ├── Financial Analysis for Small and Medium Enterprises-v12.pptx   # trainer slide deck (122 slides)
-│   ├── Financial Analysis for Small and Medium Enterprises-v12.pdf    # learner slide PDF
+│   ├── Financial Analysis for Small and Medium Enterprises-v13.pptx   # trainer slide deck (122 slides)
+│   ├── Financial Analysis for Small and Medium Enterprises-v13.pdf    # learner slide PDF
 │   ├── LP-Financial Analysis for Small and Medium Enterprises.docx    # Lesson Plan (+ PDF)
 │   ├── LG-Financial Analysis for Small and Medium Enterprises.docx    # Learner Guide (+ PDF)
-│   └── assets/                                                        # slide images & diagrams
-├── activities/                    # 6 hands-on activities — one folder each
-│   ├── activity01 … activity06    # guide (.md) + mock-data workbook (.xlsx) + raw data (.csv)
-│   └── TOPIC 1–3 folders          # legacy activity question/answer worksheets (PDF)
+│   ├── assets/                                                        # slide images & diagrams
+│   └── archive/                                                       # superseded deck versions
+├── activities/                    # 6 hands-on activities — one self-contained folder each
+│   ├── README.md                  # index: activity → folder → data set
+│   └── activity01 … activity06    # guide (.md) + workbook (.xlsx) + data (.csv) + worksheet (.pdf)
 ├── LG-Financial Analysis for Small and Medium Enterprises.md          # Learner Guide (Markdown mirror)
 └── .claude/                       # single-source courseware build pipeline
 ```
+
+Every file belonging to an activity lives in that activity's folder — nothing sits loose at the
+`activities/` root. For example `activities/activity02/` holds the guide, the Orchid Logistics vs
+Marina Retail workbook, both statement CSVs, and the printable worksheet.
 
 ## Hands-On Activities
 

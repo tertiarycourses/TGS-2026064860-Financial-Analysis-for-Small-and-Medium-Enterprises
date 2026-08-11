@@ -43,11 +43,15 @@
 
 6. Write the verdict on 'Your Workings': Company Y has the higher structural solvency risk — its capital structure depends on lenders — even though its current interest coverage is stronger. Recommend the leverage and coverage covenants you would monitor.
 
-## Data files in this folder
+## Files in this folder
 
-- `FA-Activity-06-Solvency-Analysis.xlsx`
-- `balance_sheet_x_y.csv`
-- `income_statement_x_y.csv`
+- `FA-Activity-06-Solvency-Analysis.xlsx` — mock-data workbook (Excel)
+- `activity-06-worksheet-question.pdf` — printable worksheet (PDF)
+- `balance_sheet_x_y.csv` — raw data (CSV)
+- `income_statement_x_y.csv` — raw data (CSV)
+
+> The model-answer PDF (`*-worksheet-answer.pdf`) in this folder is trainer material.
+
 
 ## Test it
 

@@ -64,11 +64,15 @@ Receivables: 3.00 → 3.29 · Payables: 0.99 → 0.73
 
 9. Write your observations under the template — cover all four families: (1) profitability and efficiency improve steadily (margins, asset and inventory turnover all up); (2) liquidity deteriorates (current ratio 2.13 → 1.64) as payables are stretched; (3) leverage creeps up (D/E 0.56 → 0.75); (4) verdict: a profitable, tightening business — watch the falling current ratio and the supplier stretch.
 
-## Data files in this folder
+## Files in this folder
 
-- `FA-Activity-03-Trend-Analysis.xlsx`
-- `balance_sheet_2018_2021.csv`
-- `income_statement_2018_2021.csv`
+- `FA-Activity-03-Trend-Analysis.xlsx` — mock-data workbook (Excel)
+- `activity-03-worksheet-question.pdf` — printable worksheet (PDF)
+- `balance_sheet_2018_2021.csv` — raw data (CSV)
+- `income_statement_2018_2021.csv` — raw data (CSV)
+
+> The model-answer PDF (`*-worksheet-answer.pdf`) in this folder is trainer material.
+
 
 ## Test it
 
