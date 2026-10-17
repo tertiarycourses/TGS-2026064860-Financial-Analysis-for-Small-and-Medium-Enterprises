@@ -1,4 +1,14 @@
-# WSQ — Financial Analysis for Small and Medium Enterprises
+# Financial Analysis for Small and Medium Enterprises
+
+Read an SME's financial statements, evaluate performance with ratios and trends, and plan with budgets and capital-budgeting techniques in Excel.
+
+| Course detail | Information |
+|---|---|
+| Course code | `TGS-2026064860` |
+| Programme | WSQ |
+| Duration | 2 days / 16 hours |
+| Registration | [View course details and register](https://www.tertiarycourses.com.sg/casl-financial-analysis-for-small-and-medium-enterprises.html) |
+| Funding | Up to 70% course-fee funding may be available. Eligibility, validity dates and other terms apply; check the registration page for current details. |
 
 ![WSQ](https://img.shields.io/badge/WSQ-TGS--2026064860-1F6FEB)
 ![Duration](https://img.shields.io/badge/Duration-2%20days%20%C2%B7%2016%20hours-10B981)
@@ -34,7 +44,7 @@ and capital-budgeting techniques to real numbers in Excel.
 
 ```
 ├── courseware/
-│   ├── Financial Analysis for Small and Medium Enterprises-v13.pptx   # trainer slide deck (122 slides)
+│   ├── Financial Analysis for Small and Medium Enterprises-v13.pptx   # trainer slide deck (123 slides)
 │   ├── Financial Analysis for Small and Medium Enterprises-v13.pdf    # learner slide PDF
 │   ├── LP-Financial Analysis for Small and Medium Enterprises.docx    # Lesson Plan (+ PDF)
 │   ├── LG-Financial Analysis for Small and Medium Enterprises.docx    # Learner Guide (+ PDF)
@@ -51,14 +61,16 @@ Every file belonging to an activity lives in that activity's folder — nothing 
 `activities/` root. For example `activities/activity02/` holds the guide, the Orchid Logistics vs
 Marina Retail workbook, both statement CSVs, and the printable worksheet.
 
-## Hands-On Activities
+## Activities
 
-1. **Prepare a Cash Flow Statement** — derive operating / investing / financing cash flows from a balance sheet and income statement.
-2. **Ratio Analysis of Two Companies** — liquidity, profitability, turnover and solvency ratios for Companies X and Y.
-3. **Trend Analysis over Four Years** — YoY growth and four-year ratio trends.
-4. **Payback Period & Discounted Payback Period** — evaluate a $2,000 project at a 10% discount rate.
-5. **Net Present Value & Profitability Index** — NPV and PI accept/reject decision.
-6. **Solvency & Financial Risk Analysis** — debt-to-equity, financial leverage and interest coverage comparison.
+See the [activities index](activities/README.md).
+
+1. [**Prepare a Cash Flow Statement**](activities/activity01/) — derive operating / investing / financing cash flows from a balance sheet and income statement.
+2. [**Ratio Analysis of Two Companies**](activities/activity02/) — liquidity, profitability, turnover and solvency ratios for Companies X and Y.
+3. [**Trend Analysis over Four Years**](activities/activity03/) — YoY growth and four-year ratio trends.
+4. [**Payback Period & Discounted Payback Period**](activities/activity04/) — evaluate a $2,000 project at a 10% discount rate.
+5. [**Net Present Value & Profitability Index**](activities/activity05/) — NPV and PI accept/reject decision.
+6. [**Solvency & Financial Risk Analysis**](activities/activity06/) — debt-to-equity, financial leverage and interest coverage comparison.
 
 Every activity ships with realistic mock data for fictitious Singapore SMEs (Havenwood Trading,
 Orchid Logistics, Marina Retail Group, Sunrise F&B Holdings) as a formatted Excel workbook plus raw
@@ -73,11 +85,20 @@ All artifacts (PPT, LP, LG, activity files) build from a single content source
 COURSE_REPO="$PWD" bash .claude/skills/courseware-build/build/build_courseware.sh
 ```
 
-## Assessment
+## Public courseware package
+
+| Item | Files |
+|---|---|
+| Slide deck (v13, 123 slides) | [PPTX](<courseware/Financial Analysis for Small and Medium Enterprises-v13.pptx>) · [PDF](<courseware/Financial Analysis for Small and Medium Enterprises-v13.pdf>) |
+| Learner Guide | [DOCX](<courseware/LG-Financial Analysis for Small and Medium Enterprises.docx>) · [PDF](<courseware/LG-Financial Analysis for Small and Medium Enterprises.pdf>) · [Markdown](<LG-Financial Analysis for Small and Medium Enterprises.md>) |
+| Lesson Plan | [DOCX](<courseware/LP-Financial Analysis for Small and Medium Enterprises.docx>) · [PDF](<courseware/LP-Financial Analysis for Small and Medium Enterprises.pdf>) |
+| Activities | [`activities/`](activities/) — 6 hands-on Excel activities |
+
+## Assessment and distribution boundary
 
 Final assessment (Day 2, open book): **Written Assessment (SAQ)** — 1 hour, and
 **Practical Performance (PP)** — 1 hour. Assessment papers are confidential and are **not**
-included in this repository.
+included in this repository. Source references, credentials and `.env` files are also excluded.
 
 ## Support
 
